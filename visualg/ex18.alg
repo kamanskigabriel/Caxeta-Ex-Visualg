@@ -1,18 +1,31 @@
-algoritmo "reajuste_salario"
+algoritmo "operacoes"
 
 var
-   salario, novo: real
+   n1, n2, resultado: real
+   opcao: inteiro
 
 inicio
-   escreva("Digite o salario: ")
-   leia(salario)
+   escreva("Digite dois numeros: ")
+   leia(n1, n2)
 
-   se (salario <= 300) entao
-      novo <- salario * 1.35
+   escreva("1-Media  2-Soma  3-Produto: ")
+   leia(opcao)
+
+   se (opcao = 1) entao
+      resultado <- (n1 + n2) / 2
    senao
-      novo <- salario * 1.15
+      se (opcao = 2) entao
+         resultado <- n1 + n2
+      senao
+         se (opcao = 3) entao
+            resultado <- n1 * n2
+         senao
+            escreva("Opcao invalida")
+            pare
+         fimse
+      fimse
    fimse
 
-   escreva("Novo salario: ", novo)
+   escreva("Resultado: ", resultado)
 
 fimalgoritmo

@@ -1,26 +1,53 @@
-algoritmo "investimento"
+algoritmo "grupo_risco"
 
 var
-   tipo: inteiro
-   valor, total: real
+   idade: inteiro
+   peso: real
+   risco: inteiro
 
 inicio
-   escreva("Digite o tipo (1 = poupanca, 2 = renda fixa): ")
-   leia(tipo)
+   escreva("Digite a idade: ")
+   leia(idade)
 
-   escreva("Digite o valor: ")
-   leia(valor)
+   escreva("Digite o peso: ")
+   leia(peso)
 
-   se (tipo = 1) entao
-      total <- valor * 1.03
-   senao
-      se (tipo = 2) entao
-         total <- valor * 1.04
+   se (idade < 20) entao
+      se (peso <= 60) entao
+         risco <- 9
       senao
-         escreva("Tipo invalido")
+         se (peso <= 90) entao
+            risco <- 8
+         senao
+            risco <- 7
+         fimse
+      fimse
+
+   senao
+      se (idade <= 50) entao
+         se (peso <= 60) entao
+            risco <- 6
+         senao
+            se (peso <= 90) entao
+               risco <- 5
+            senao
+               risco <- 4
+            fimse
+         fimse
+
+      senao
+         se (peso <= 60) entao
+            risco <- 3
+         senao
+            se (peso <= 90) entao
+               risco <- 2
+            senao
+               risco <- 1
+            fimse
+         fimse
       fimse
    fimse
 
-   escreva("Valor corrigido: ", total)
+   escreva("Grupo de risco: ", risco)
 
 fimalgoritmo

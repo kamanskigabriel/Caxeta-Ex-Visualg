@@ -1,53 +1,18 @@
-algoritmo "grupo_risco"
+algoritmo "reajuste_salario"
 
 var
-   idade: inteiro
-   peso: real
-   risco: inteiro
+   salario, novo: real
 
 inicio
-   escreva("Digite a idade: ")
-   leia(idade)
+   escreva("Digite o salario: ")
+   leia(salario)
 
-   escreva("Digite o peso: ")
-   leia(peso)
-
-   se (idade < 20) entao
-      se (peso <= 60) entao
-         risco <- 9
-      senao
-         se (peso <= 90) entao
-            risco <- 8
-         senao
-            risco <- 7
-         fimse
-      fimse
-
+   se (salario <= 300) entao
+      novo <- salario * 1.35
    senao
-      se (idade <= 50) entao
-         se (peso <= 60) entao
-            risco <- 6
-         senao
-            se (peso <= 90) entao
-               risco <- 5
-            senao
-               risco <- 4
-            fimse
-         fimse
-
-      senao
-         se (peso <= 60) entao
-            risco <- 3
-         senao
-            se (peso <= 90) entao
-               risco <- 2
-            senao
-               risco <- 1
-            fimse
-         fimse
-      fimse
+      novo <- salario * 1.15
    fimse
 
-   escreva("Grupo de risco: ", risco)
+   escreva("Novo salario: ", novo)
 
 fimalgoritmo

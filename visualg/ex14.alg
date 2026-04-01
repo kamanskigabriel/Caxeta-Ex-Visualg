@@ -1,32 +1,28 @@
-algoritmo "pagamento"
+algoritmo "nadador"
 
 var
-   preco, total: real
-   codigo: inteiro
+   idade: inteiro
 
 inicio
-   escreva("Digite o preco do produto: ")
-   leia(preco)
+   escreva("Digite a idade: ")
+   leia(idade)
 
-   escreva("Digite o codigo (1 a 4): ")
-   leia(codigo)
-
-   se (codigo = 1) entao
-      total <- preco * 0.9
+   se (idade >= 5 e idade <= 7) entao
+      escreva("Infantil A")
    senao
-      se (codigo = 2) entao
-         total <- preco * 0.95
+      se (idade <= 10) entao
+         escreva("Infantil B")
       senao
-         se (codigo = 3) entao
-            total <- preco
+         se (idade <= 13) entao
+            escreva("Juvenil A")
          senao
-            se (codigo = 4) entao
-               total <- preco * 1.1
+            se (idade <= 17) entao
+               escreva("Juvenil B")
+            senao
+               escreva("Adulto")
             fimse
          fimse
       fimse
    fimse
-
-   escreva("Total a pagar: ", total)
 
 fimalgoritmo
